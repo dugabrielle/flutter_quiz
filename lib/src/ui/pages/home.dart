@@ -44,43 +44,46 @@ class _HomePageState extends State<HomePage> {
                   vertical: 30,
                   horizontal: 15,
                 ),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    const Text(
-                      'Nível Básico',
-                      style: TextStyle(
-                        fontSize: 22,
-                        fontWeight: FontWeight.bold,
-                        color: Colors.black,
+                child: MouseRegion(
+                  cursor: SystemMouseCursors.click,
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      const Text(
+                        'Nível Básico',
+                        style: TextStyle(
+                          fontSize: 22,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.black,
+                        ),
                       ),
-                    ),
-                    MyGrid(items: _basic),
+                      MyGrid(items: _basic),
 
-                    const SizedBox(height: 20),
+                      const SizedBox(height: 20),
 
-                    Text(
-                      'Nível Intermediário',
-                      style: TextStyle(
-                        fontSize: 22,
-                        fontWeight: FontWeight.bold,
-                        color: Colors.red[800],
+                      Text(
+                        'Nível Intermediário',
+                        style: TextStyle(
+                          fontSize: 22,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.red[800],
+                        ),
                       ),
-                    ),
-                    MyGrid(items: _intermediate),
+                      MyGrid(items: _intermediate),
 
-                    const SizedBox(height: 20),
+                      const SizedBox(height: 20),
 
-                    Text(
-                      'Nível Avançado',
-                      style: TextStyle(
-                        fontSize: 22,
-                        fontWeight: FontWeight.bold,
-                        color: Colors.yellow[800],
+                      Text(
+                        'Nível Avançado',
+                        style: TextStyle(
+                          fontSize: 22,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.yellow[800],
+                        ),
                       ),
-                    ),
-                    MyGrid(items: _advanced),
-                  ],
+                      MyGrid(items: _advanced),
+                    ],
+                  ),
                 ),
               ),
     );
