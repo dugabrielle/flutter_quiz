@@ -171,10 +171,18 @@ class MyAppBar extends StatelessWidget implements PreferredSizeWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              CircleAvatar(
-                radius: 40,
-                backgroundImage: const AssetImage('images/german.png'),
-                backgroundColor: Colors.transparent,
+              MouseRegion(
+                cursor: SystemMouseCursors.click,
+                child: GestureDetector(
+                  onTap: () {
+                    Navigator.pushReplacementNamed(context, '/perfil');
+                  },
+                  child: CircleAvatar(
+                    radius: 40,
+                    backgroundImage: const AssetImage('images/german.png'),
+                    backgroundColor: Colors.transparent,
+                  ),
+                ),
               ),
               Row(
                 children: [
