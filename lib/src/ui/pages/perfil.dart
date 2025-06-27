@@ -13,6 +13,7 @@ class _PerfildoUsuarioState extends State<PerfildoUsuario> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Color.fromARGB(255, 230, 235, 240),
       appBar: PerfilAppBar(),
       drawer: Drawer(
         child: ListView(
@@ -33,7 +34,7 @@ class _PerfildoUsuarioState extends State<PerfildoUsuario> {
                 ),
               ),
               child: Text(
-                'Menu',
+                '',
                 style: TextStyle(color: Colors.white, fontSize: 24),
               ),
             ),
@@ -91,13 +92,17 @@ class _PerfildoUsuarioState extends State<PerfildoUsuario> {
               Container(
                 width: 120,
                 decoration: BoxDecoration(
-                  border: Border.all(color: Colors.yellow),
+                  border: Border.all(
+                    color: Color.fromARGB(255, 91, 147, 211),
+                    width: 2,
+                  ),
                   borderRadius: BorderRadius.circular(12),
                 ),
                 child: ClipRRect(
                   borderRadius: BorderRadius.circular(12),
                   child: ElevatedButton(
                     style: ElevatedButton.styleFrom(
+                      backgroundColor: const Color.fromARGB(255, 223, 222, 222),
                       padding: EdgeInsets.symmetric(vertical: 15),
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(12),
@@ -111,7 +116,11 @@ class _PerfildoUsuarioState extends State<PerfildoUsuario> {
                     },
                     child: const Text(
                       'Salvar',
-                      style: TextStyle(fontSize: 16, color: Colors.black),
+                      style: TextStyle(
+                        fontSize: 16,
+                        color: Colors.black,
+                        fontWeight: FontWeight.bold,
+                      ),
                     ),
                   ),
                 ),
@@ -132,7 +141,8 @@ class PerfilAppBar extends StatelessWidget implements PreferredSizeWidget {
     return Container(
       height: preferredSize.height,
       decoration: const BoxDecoration(
-        border: Border(bottom: BorderSide(color: Colors.black, width: 2)),
+        color: Color.fromARGB(255, 91, 147, 211),
+        border: Border(bottom: BorderSide(color: Colors.black, width: 1)),
         borderRadius: BorderRadius.vertical(bottom: Radius.circular(20)),
       ),
       child: SafeArea(
