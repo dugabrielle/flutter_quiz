@@ -16,7 +16,7 @@ class _BoasVindasState extends State<BoasVindas> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.transparent,
+      backgroundColor: Color.fromARGB(255, 228, 227, 227),
       body: SafeArea(
         child: Stack(
           children: [
@@ -98,12 +98,14 @@ class _BoasVindasState extends State<BoasVindas> {
                                 ),
                               ),
                             ),
-                            onPressed: () {},
+                            onPressed: () {
+                              Navigator.pushReplacementNamed(context, '/home');
+                            },
                             child: const Text(
                               'Iniciar',
                               style: TextStyle(
                                 fontSize: 18,
-                                fontWeight: FontWeight.w600,
+                                fontWeight: FontWeight.bold,
                                 color: Colors.white,
                               ),
                             ),
