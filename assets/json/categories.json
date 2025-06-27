@@ -1,0 +1,40 @@
+{
+  "basic": [
+    {
+      "id": 1,
+      "title": "Farben",
+      "image": "images/colors.jpg"
+    },
+    {
+      "id": 2,
+      "title": "Zahlen",
+      "image": "images/numbers.jpg"
+    }
+  ],
+
+  "intermediate": [
+    {
+      "id": 3,
+      "title": "Tiere",
+      "image": "images/eagles.jpg"
+    },
+    {
+      "id": 4,
+      "title": "Gefühle",
+      "image": "images/emotions.jpg"
+    }
+  ],
+
+  "advanced": [
+    {
+      "id": 5,
+      "title": "Berufe",
+      "image": "images/professions.jpg"
+    },
+    {
+      "id": 6,
+      "title": "Natur",
+      "image": "images/nature.jpg"
+    }
+  ]
+}
