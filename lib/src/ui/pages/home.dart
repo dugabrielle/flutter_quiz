@@ -191,14 +191,6 @@ class MyAppBar extends StatelessWidget implements PreferredSizeWidget {
                 children: [
                   IconButton(
                     icon: Icon(
-                      Icons.settings,
-                      size: 30,
-                      color: Colors.grey[800],
-                    ),
-                    onPressed: () {},
-                  ),
-                  IconButton(
-                    icon: Icon(
                       Icons.light_mode,
                       size: 30,
                       color: Colors.grey[800],

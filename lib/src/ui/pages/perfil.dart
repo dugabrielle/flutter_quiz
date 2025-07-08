@@ -48,6 +48,14 @@ class _PerfildoUsuarioState extends State<PerfildoUsuario> {
                 Navigator.pushReplacementNamed(context, '/home');
               },
             ),
+            ListTile(
+              leading: const Icon(Icons.settings),
+              title: const Text(
+                'Configurações',
+                style: TextStyle(fontWeight: FontWeight.bold),
+              ),
+              onTap: () {},
+            ),
           ],
         ),
       ),
