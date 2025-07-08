@@ -40,16 +40,12 @@ class _PerfildoUsuarioState extends State<PerfildoUsuario> {
             ),
             ListTile(
               leading: const Icon(Icons.home),
-              title: const Text('Home'),
+              title: const Text(
+                'Home',
+                style: TextStyle(fontWeight: FontWeight.bold),
+              ),
               onTap: () {
-                Navigator.pop(context);
-              },
-            ),
-            ListTile(
-              leading: const Icon(Icons.person),
-              title: const Text('Perfil'),
-              onTap: () {
-                Navigator.pop(context);
+                Navigator.pushReplacementNamed(context, '/home');
               },
             ),
           ],
