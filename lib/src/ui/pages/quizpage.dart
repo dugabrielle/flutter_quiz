@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_quizz/src/data/utils/answer_btn_color.dart';
 import 'package:flutter_quizz/src/data/utils/random_border.dart';
 
 class QuizPage extends StatefulWidget {
@@ -9,6 +10,46 @@ class QuizPage extends StatefulWidget {
 }
 
 class _QuizPageState extends State<QuizPage> {
+  int selected = -1;
+  final int correct = 2; // exemplo de resposta correta
+  bool disabled = false;
+  int maxTries = 3;
+  int tries = 0;
+
+  final List<String> options = [
+    'Alternativa A',
+    'Alternativa B',
+    'Alternativa C',
+    'Alternativa D',
+  ];
+
+  void handleTap(int index, BuildContext context) {
+    if (disabled) return; // impede selcionar novamente após estar desabilitada
+    setState(() {
+      selected = index;
+
+      if (index == correct) {
+        disabled = true;
+      } else {
+        tries++;
+        if (tries >= maxTries) {
+          disabled = true;
+        }
+      }
+    });
+
+    if (index != correct) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(
+          content: Text(
+            'Ops, resposta incorreta! Tentativas restantes: ${maxTries - tries}',
+          ),
+          duration: Duration(seconds: 1),
+        ),
+      );
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -58,28 +99,18 @@ class _QuizPageState extends State<QuizPage> {
                           padding: const EdgeInsets.symmetric(horizontal: 0),
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.stretch,
-                            children: [
-                              NeonButton(
-                                text: 'Alternativa A',
-                                onTap: () {},
-                                isCorrect: false,
-                              ),
-                              NeonButton(
-                                text: 'Alternativa B',
-                                onTap: () {},
-                                isCorrect: false,
-                              ),
-                              NeonButton(
-                                text: 'Alternativa C',
-                                onTap: () {},
-                                isCorrect: false,
-                              ),
-                              NeonButton(
-                                text: 'Alternativa D',
-                                onTap: () {},
-                                isCorrect: false,
-                              ),
-                            ],
+                            children: List.generate(options.length, (index) {
+                              return NeonButton(
+                                text: options[index],
+                                onTap: () => handleTap(index, context),
+                                color: answerBtnColor(
+                                  disabled: disabled,
+                                  index: index,
+                                  selected: selected,
+                                  correct: correct,
+                                ),
+                              );
+                            }),
                           ),
                         ),
                       ],
@@ -95,38 +126,39 @@ class _QuizPageState extends State<QuizPage> {
   }
 }
 
-class NeonButton extends StatefulWidget {
+class NeonButton extends StatelessWidget {
   final String text;
   final VoidCallback onTap;
-  final bool isCorrect;
+  final Color color;
 
   const NeonButton({
     required this.text,
     required this.onTap,
-    required this.isCorrect,
+    required this.color,
     super.key,
   });
 
   @override
-  State<NeonButton> createState() => _NeonButtonState();
-}
-
-class _NeonButtonState extends State<NeonButton> {
-  bool? answered; //
-
-  // initState
-
-  @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: widget.onTap,
+      onTap: onTap,
       child: Container(
         width: double.infinity,
         margin: const EdgeInsets.symmetric(vertical: 8),
         padding: const EdgeInsets.symmetric(vertical: 20),
         decoration: BoxDecoration(
+          color: color,
           border: Border.all(color: BorderColor.value),
           borderRadius: BorderRadius.circular(8),
+        ),
+        child: Text(
+          text,
+          style: TextStyle(
+            color: color == Colors.transparent ? Colors.white : Colors.black,
+            fontWeight: FontWeight.bold,
+            fontSize: 16,
+          ),
+          textAlign: TextAlign.center,
         ),
       ),
     );
