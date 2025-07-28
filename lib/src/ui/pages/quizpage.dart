@@ -24,7 +24,7 @@ class _QuizPageState extends State<QuizPage> {
   ];
 
   void handleTap(int index, BuildContext context) {
-    if (disabled) return; // impede selcionar novamente após estar desabilitada
+    if (disabled) return; // impede selecionar novamente após estar desabilitada
     setState(() {
       selected = index;
 
