@@ -49,9 +49,9 @@ class _PerfildoUsuarioState extends State<PerfildoUsuario> {
               },
             ),
             ListTile(
-              leading: const Icon(Icons.settings),
+              leading: const Icon(Icons.bar_chart),
               title: const Text(
-                'Configurações',
+                'Resultado',
                 style: TextStyle(fontWeight: FontWeight.bold),
               ),
               onTap: () {},
