@@ -79,6 +79,27 @@ class _QuizPageState extends State<QuizPage> {
                                 onTap: () {},
                                 isCorrect: false,
                               ),
+                              Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                children: [
+                                  IconButton(
+                                    onPressed: () {},
+                                    icon: Icon(
+                                      Icons.arrow_back,
+                                      color: Colors.white,
+                                    ),
+                                  ),
+
+                                  IconButton(
+                                    onPressed: () {},
+                                    icon: Icon(
+                                      Icons.arrow_forward,
+                                      color: Colors.white,
+                                    ),
+                                  ),
+                                ],
+                              ),
                             ],
                           ),
                         ),
@@ -118,15 +139,18 @@ class _NeonButtonState extends State<NeonButton> {
 
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: widget.onTap,
-      child: Container(
-        width: double.infinity,
-        margin: const EdgeInsets.symmetric(vertical: 8),
-        padding: const EdgeInsets.symmetric(vertical: 20),
-        decoration: BoxDecoration(
-          border: Border.all(color: BorderColor.value),
-          borderRadius: BorderRadius.circular(8),
+    return MouseRegion(
+      cursor: SystemMouseCursors.click,
+      child: GestureDetector(
+        onTap: widget.onTap,
+        child: Container(
+          width: double.infinity,
+          margin: const EdgeInsets.symmetric(vertical: 8),
+          padding: const EdgeInsets.symmetric(vertical: 20),
+          decoration: BoxDecoration(
+            border: Border.all(color: BorderColor.value),
+            borderRadius: BorderRadius.circular(8),
+          ),
         ),
       ),
     );
