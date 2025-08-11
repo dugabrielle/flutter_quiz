@@ -1,0 +1,163 @@
+{ 
+
+  "quizzes": [ 
+
+    { 
+
+      "subcategoryId": 1, 
+
+      "subcategoryTitle": "Farben", 
+
+      "questions": [ 
+
+        { 
+
+          "questionId": 11, 
+
+          "questionImg": "images/questions/11.jpg", 
+
+          "options": ["Vermelho", "Azul", "Amarelo", "Verde"], 
+
+          "correct": "Azul" 
+
+        } 
+
+        
+
+      ] 
+
+    }, 
+
+    { 
+
+      "subcategoryId": 2, 
+
+      "subcategoryTitle": "Zahlen", 
+
+      "questions": [ 
+
+        { 
+
+          "questionId": 21, 
+
+          "questionImg": "images/questions/21.jpg", 
+
+          "options": ["Três", "Quatro", "Cinco", "Seis"], 
+
+          "correct": "Quatro" 
+
+        } 
+
+         
+
+      ] 
+
+    }, 
+
+    { 
+
+      "subcategoryId": 3, 
+
+      "subcategoryTitle": "Tiere", 
+
+      "questions": [ 
+
+        { 
+
+          "questionId": 31, 
+
+          "questionImg": "images/questions/31.jpg", 
+
+          "options": ["Tigre", "Elefante", "Leão", "Urso"], 
+
+          "correct": "Leão" 
+
+        } 
+
+       
+
+      ] 
+
+    }, 
+
+    { 
+
+      "subcategoryId": 4, 
+
+      "subcategoryTitle": "Gefühle", 
+
+      "questions": [ 
+
+        { 
+
+          "questionId": 41, 
+
+          "questionImg": "images/questions/41.jpg", 
+
+          "options": ["Tristeza", "Raiva", "Alegria", "Medo"], 
+
+          "correct": "Alegria" 
+
+        } 
+
+      
+
+      ] 
+
+    }, 
+
+    { 
+
+      "subcategoryId": 5, 
+
+      "subcategoryTitle": "Berufe", 
+
+      "questions": [ 
+
+        { 
+
+          "questionId": 51, 
+
+          "questionImg": "images/questions/51.jpg", 
+
+          "options": ["Professor", "Enfermeiro", "Cozinheiro", "Motorista"], 
+
+          "correct": "Enfermeiro" 
+
+        } 
+
+        
+
+      ] 
+
+    }, 
+
+    { 
+
+      "subcategoryId": 6, 
+
+      "subcategoryTitle": "Natur", 
+
+      "questions": [ 
+
+        { 
+
+          "questionId": 61, 
+
+          "questionImg": "images/questions/61.jpg", 
+
+          "options": ["Escuridão", "Água e luz solar", "Açúcar", "Sal"], 
+
+          "correct": "Água e luz solar" 
+
+        } 
+
+      ] 
+
+    } 
+
+  ] 
+
+} 
+
+ 

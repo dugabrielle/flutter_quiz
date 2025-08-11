@@ -101,7 +101,7 @@ class MyGrid extends StatefulWidget {
   State<MyGrid> createState() => _MyGridState();
 }
 
-class _MyGridState extends State<MyGrid> {
+class _MyGridState extends State<MyGrid> with TickerProviderStateMixin {
   @override
   Widget build(BuildContext context) {
     return Center(
@@ -119,31 +119,78 @@ class _MyGridState extends State<MyGrid> {
           ),
           children:
               widget.items.map((item) {
-                return Container(
-                  decoration: BoxDecoration(
-                    border: Border.all(color: Colors.grey, width: 2),
-                    borderRadius: BorderRadius.circular(12),
-                  ),
-                  padding: const EdgeInsets.all(10),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: [
-                      Text(
-                        item['title'],
-                        style: const TextStyle(
-                          fontSize: 18,
-                          fontWeight: FontWeight.bold,
-                        ),
-                        textAlign: TextAlign.center,
-                      ),
-                      const SizedBox(height: 8),
-                      Expanded(
-                        child: Image.asset(item['image'], fit: BoxFit.cover),
-                      ),
-                    ],
-                  ),
-                );
+                return _FadeItems(item: item);
               }).toList(),
+        ),
+      ),
+    );
+  }
+}
+
+// FadeItems
+
+class _FadeItems extends StatefulWidget {
+  final dynamic item;
+  const _FadeItems({required this.item});
+
+  @override
+  _FadeItemsState createState() => _FadeItemsState();
+}
+
+class _FadeItemsState extends State<_FadeItems> with TickerProviderStateMixin {
+  late AnimationController _controller;
+  late CurvedAnimation _animation;
+
+  @override
+  void initState() {
+    super.initState();
+    _controller = AnimationController(
+      duration: const Duration(milliseconds: 500),
+      vsync: this,
+    );
+    _animation = CurvedAnimation(parent: _controller, curve: Curves.easeInOut);
+    _controller.value = 1.0;
+  }
+
+  @override
+  void dispose() {
+    _controller.dispose();
+    super.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return GestureDetector(
+      onTap: () {
+        _controller.reverse().then((_) {
+          Navigator.pushNamed(context, '/quiz', arguments: widget.item);
+        });
+      },
+      child: FadeTransition(
+        opacity: _animation,
+        child: Container(
+          decoration: BoxDecoration(
+            border: Border.all(color: Colors.grey, width: 2),
+            borderRadius: BorderRadius.circular(12),
+          ),
+          padding: const EdgeInsets.all(10),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Text(
+                widget.item['title'],
+                style: const TextStyle(
+                  fontSize: 18,
+                  fontWeight: FontWeight.bold,
+                ),
+                textAlign: TextAlign.center,
+              ),
+              const SizedBox(height: 8),
+              Expanded(
+                child: Image.asset(widget.item['image'], fit: BoxFit.cover),
+              ),
+            ],
+          ),
         ),
       ),
     );
