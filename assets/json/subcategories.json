@@ -1,163 +1,487 @@
-{ 
-
-  "quizzes": [ 
-
-    { 
-
-      "subcategoryId": 1, 
-
-      "subcategoryTitle": "Farben", 
-
-      "questions": [ 
-
-        { 
-
-          "questionId": 11, 
-
-          "questionImg": "images/questions/11.jpg", 
-
-          "options": ["Vermelho", "Azul", "Amarelo", "Verde"], 
-
-          "correct": "Azul" 
-
-        } 
-
-        
-
-      ] 
-
-    }, 
-
-    { 
-
-      "subcategoryId": 2, 
-
-      "subcategoryTitle": "Zahlen", 
-
-      "questions": [ 
-
-        { 
-
-          "questionId": 21, 
-
-          "questionImg": "images/questions/21.jpg", 
-
-          "options": ["Três", "Quatro", "Cinco", "Seis"], 
-
-          "correct": "Quatro" 
-
-        } 
-
-         
-
-      ] 
-
-    }, 
-
-    { 
-
-      "subcategoryId": 3, 
-
-      "subcategoryTitle": "Tiere", 
-
-      "questions": [ 
-
-        { 
-
-          "questionId": 31, 
-
-          "questionImg": "images/questions/31.jpg", 
-
-          "options": ["Tigre", "Elefante", "Leão", "Urso"], 
-
-          "correct": "Leão" 
-
-        } 
-
-       
-
-      ] 
-
-    }, 
-
-    { 
-
-      "subcategoryId": 4, 
-
-      "subcategoryTitle": "Gefühle", 
-
-      "questions": [ 
-
-        { 
-
-          "questionId": 41, 
-
-          "questionImg": "images/questions/41.jpg", 
-
-          "options": ["Tristeza", "Raiva", "Alegria", "Medo"], 
-
-          "correct": "Alegria" 
-
-        } 
-
-      
-
-      ] 
-
-    }, 
-
-    { 
-
-      "subcategoryId": 5, 
-
-      "subcategoryTitle": "Berufe", 
-
-      "questions": [ 
-
-        { 
-
-          "questionId": 51, 
-
-          "questionImg": "images/questions/51.jpg", 
-
-          "options": ["Professor", "Enfermeiro", "Cozinheiro", "Motorista"], 
-
-          "correct": "Enfermeiro" 
-
-        } 
-
-        
-
-      ] 
-
-    }, 
-
-    { 
-
-      "subcategoryId": 6, 
-
-      "subcategoryTitle": "Natur", 
-
-      "questions": [ 
-
-        { 
-
-          "questionId": 61, 
-
-          "questionImg": "images/questions/61.jpg", 
-
-          "options": ["Escuridão", "Água e luz solar", "Açúcar", "Sal"], 
-
-          "correct": "Água e luz solar" 
-
-        } 
-
-      ] 
-
-    } 
-
-  ] 
-
-} 
-
- 
+{
+  "quizzes": [
+    {
+      "subcategoryId": 1,
+
+      "subcategoryTitle": "Farben",
+
+      "questions": [
+        {
+          "questionId": 1,
+          "questionImg": "images/farben/black",
+          "options": ["Weiß", "Schwarz", "Orange", "Dunkelgrün"],
+          "correct": "Schwarz"
+        },
+        {
+          "questionId": 2,
+          "questionImg": "images/farben/white",
+          "options": ["Gelb", "Braun", "Hellgrau", "Weiß"],
+          "correct": "Weiß"
+        },
+        {
+          "questionId": 3,
+          "questionImg": "images/farben/lilac",
+          "options": ["Lila", "Violett", "Rot", "Dunkellila"],
+          "correct": "Lila"
+        },
+        {
+          "questionId": 4,
+          "questionImg": "images/farben/blue",
+          "options": ["Weinrot", "Purpur", "Blau", "Silber"],
+          "correct": "Blau"
+        },
+        {
+          "questionId": 5,
+          "questionImg": "images/farben/grey",
+          "options": ["Hellgrau", "Silber", "Grau", "Gold"],
+          "correct": "Grau"
+        },
+        {
+          "questionId": 6,
+          "questionImg": "images/farben/dark-blue",
+          "options": ["Gelb", "Dunkelgrün", "Dunkelblau", "Violett"],
+          "correct": "Dunkelblau"
+        },
+        {
+          "questionId": 7,
+          "questionImg": "images/farben/red",
+          "options": ["Braun", "Lachs", "Hellgelb", "Rot"],
+          "correct": "Rot"
+        },
+        {
+          "questionId": 8,
+          "questionImg": "images/farben/yellow",
+          "options": ["Gold", "Gelb", "Creme", "Grün"],
+          "correct": "Gelb"
+        },
+        {
+          "questionId": 9,
+          "questionImg": "images/farben/green",
+          "options": ["Jade", "Grün", "Hellblau", "Rosa"],
+          "correct": "Grün"
+        },
+        {
+          "questionId": 10,
+          "questionImg": "images/farben/beige",
+          "options": ["Beige", "Creme", "Perlweiß", "Koralle"],
+          "correct": "Beige"
+        }
+      ]
+    },
+
+    {
+      "subcategoryId": 2,
+
+      "subcategoryTitle": "Zahlen",
+
+      "questions": [
+        {
+          "questionId": 11,
+          "questionImg": "images/zahlen/2",
+          "options": ["Sechs", "Elf", "Zwei", "Vier"],
+          "correct": "Zwei"
+        },
+        {
+          "questionId": 12,
+          "questionImg": "images/zahlen/3",
+          "options": ["Elf", "Drei", "Zwei", "Achtzehn"],
+          "correct": "Drei"
+        },
+        {
+          "questionId": 13,
+          "questionImg": "images/zahlen/8",
+          "options": ["Zwölf", "Sieben", "Acht", "Eins"],
+          "correct": "Acht"
+        },
+        {
+          "questionId": 14,
+          "questionImg": "images/zahlen/11",
+          "options": ["Elf", "Neun", "Einundzwanzig", "Drei"],
+          "correct": "Elf"
+        },
+        {
+          "questionId": 15,
+          "questionImg": "images/zahlen/21",
+          "options": ["Sieben", "Zweiundzwanzig", "Vierzig", "Einundzwanzig"],
+          "correct": "Einundzwanzig"
+        },
+        {
+          "questionId": 16,
+          "questionImg": "images/zahlen/45",
+          "options": ["Fünfundvierzig", "Fünfzig", "Vierundvierzig", "Zwanzig"],
+          "correct": "Fünfundvierzig"
+        },
+        {
+          "questionId": 17,
+          "questionImg": "images/zahlen/124",
+          "options": [
+            "Eintausend",
+            "Einhundertvierundvierzig",
+            "Einhundertvierundzwanzig",
+            "Dreizehn"
+          ],
+          "correct": "Einhundertvierundzwanzig"
+        },
+        {
+          "questionId": 18,
+          "questionImg": "images/zahlen/362",
+          "options": [
+            "Dreihundertzweiundsiebzig",
+            "Achthundertzwei",
+            "Zweiundfünfzig",
+            "Vierundsiebzig"
+          ],
+          "correct": "Dreihundertzweiundsiebzig"
+        },
+        {
+          "questionId": 19,
+          "questionImg": "images/zahlen/500",
+          "options": [
+            "Fünfhundert",
+            "Sechzig",
+            "Sechshundert",
+            "Neununddreißig"
+          ],
+          "correct": "Fünfhundert"
+        },
+        {
+          "questionId": 20,
+          "questionImg": "images/zahlen/1009",
+          "options": [
+            "Eintausendfünfhunderteins",
+            "Eintausendneun",
+            "Eintausendzwei",
+            "Fünfzehn"
+          ],
+          "correct": "Eintausendneun"
+        }
+      ]
+    },
+
+    {
+      "subcategoryId": 3,
+
+      "subcategoryTitle": "Tiere",
+
+      "questions": [
+        {
+          "questionId": 21,
+          "questionImg": "images/tiere/wolf",
+          "options": ["der Vogel", "der Wolf", "die Maus", "der Hund"],
+          "correct": "der Wolf"
+        },
+        {
+          "questionId": 22,
+          "questionImg": "images/tiere/",
+          "options": ["die Katze", "der Bär", "der Löwe", "die Kuh"],
+          "correct": "die Katze"
+        },
+        {
+          "questionId": 23,
+          "questionImg": "images/tiere/",
+          "options": [
+            "das Schaf",
+            "der Schmetterling",
+            "die Fliege",
+            "die Biene"
+          ],
+          "correct": "die Biene"
+        },
+        {
+          "questionId": 24,
+          "questionImg": "images/tiere/eagle",
+          "options": ["die Ente", "die Eule", "der Adler", "das Pferd"],
+          "correct": "der Adler"
+        },
+        {
+          "questionId": 25,
+          "questionImg": "images/tiere/alligator",
+          "options": [
+            "der Kaiman",
+            "die Schildkröte",
+            "der Löwe",
+            "das Schwein"
+          ],
+          "correct": "der Kaiman"
+        },
+        {
+          "questionId": 26,
+          "questionImg": "images/tiere/whale",
+          "options": ["das Huhn", "der Affe", "der Wal", ""],
+          "correct": "der Wal"
+        },
+        {
+          "questionId": 27,
+          "questionImg": "images/tiere/horse",
+          "options": [
+            "das Schwein",
+            "das Nashorn",
+            "das Pferd",
+            "die Schlange"
+          ],
+          "correct": "das Pferd"
+        },
+        {
+          "questionId": 28,
+          "questionImg": "images/tiere/fox",
+          "options": ["der Fuchs", "die Eule", "der Vogel", "die Spinne"],
+          "correct": "der Fuchs"
+        },
+        {
+          "questionId": 29,
+          "questionImg": "images/tiere/jaguar",
+          "options": ["der Eisbär", "das Schaf", "der Tiger", "der Jaguar"],
+          "correct": "der Jaguar"
+        },
+        {
+          "questionId": 30,
+          "questionImg": "images/tiere/rhinoceros",
+          "options": ["das Nashorn", "der Strauß", "der Rabe", "der Löwe"],
+          "correct": "das Nashorn"
+        }
+      ]
+    },
+
+    {
+      "subcategoryId": 4,
+
+      "subcategoryTitle": "Gefühle",
+
+      "questions": [
+        {
+          "questionId": 31,
+          "questionImg": "images/gefühle/anger",
+          "options": [
+            "die Langeweile",
+            "die Wut",
+            "die Liebe",
+            "die Einsamkeit"
+          ],
+          "correct": "die Wut"
+        },
+        {
+          "questionId": 32,
+          "questionImg": "images/gefühle/joy",
+          "options": ["die Hoffnung", "die Angst", "die Unruhe", "die Freude"],
+          "correct": "die Freude"
+        },
+        {
+          "questionId": 33,
+          "questionImg": "images/gefühle/gratitude",
+          "options": [
+            "die Erleichterung",
+            "die Langeweile",
+            "die Dankbarkeit",
+            "die Mutlosigkeit"
+          ],
+          "correct": "die Dankbarkeit"
+        },
+        {
+          "questionId": 34,
+          "questionImg": "images/gefühle/jealousy",
+          "options": [
+            "die Einsamkeit",
+            "die Angst",
+            "die Eifersucht",
+            "die Langeweile"
+          ],
+          "correct": "die Eifersucht"
+        },
+        {
+          "questionId": 35,
+          "questionImg": "images/gefühle/love",
+          "options": [
+            "die Liebe",
+            "der Stolz",
+            "die Leidenschaft",
+            "die Sehnsucht"
+          ],
+          "correct": "die Liebe"
+        },
+        {
+          "questionId": 36,
+          "questionImg": "images/gefühle/fear",
+          "options": [
+            "die Verzweiflung",
+            "die Angst",
+            "der Frust",
+            "der Stolz"
+          ],
+          "correct": "die Angst"
+        },
+        {
+          "questionId": 37,
+          "questionImg": "",
+          "options": ["der Neid", "die Unruhe", "der Hass", "die Überraschung"],
+          "correct": "die Überraschung"
+        },
+        {
+          "questionId": 38,
+          "questionImg": "images/gefühle/embarrassed.jpg",
+          "options": [
+            "die Sorgen",
+            "der Ekel",
+            "die Verlegenheit",
+            "der Frust"
+          ],
+          "correct": "die Verlegenheit "
+        },
+        {
+          "questionId": 39,
+          "questionImg": "images/gefühle/sadness",
+          "options": [
+            "die Verachtung",
+            "die Traurigkeit",
+            "der Ekel",
+            "die Leidenschaft"
+          ],
+          "correct": "die Traurigkeit"
+        },
+        {
+          "questionId": 40,
+          "questionImg": "images/gefühle/worry",
+          "options": ["der Neid", "das Glück", "die Sorgen", "die Schuld"],
+          "correct": "die Sorgen"
+        }
+      ]
+    },
+
+    {
+      "subcategoryId": 5,
+
+      "subcategoryTitle": "Berufe",
+
+      "questions": [
+        {
+          "questionId": 41,
+          "questionImg": "",
+          "options": ["", "", "der Bauingenieur", ""],
+          "correct": "der Bauingenieur"
+        },
+        {
+          "questionId": 42,
+          "questionImg": "",
+          "options": ["der Tierarzt ", "", "", ""],
+          "correct": "der Tierarzt"
+        },
+        {
+          "questionId": 43,
+          "questionImg": "",
+          "options": ["", "", "der Verkäufer", ""],
+          "correct": "der Verkäufer"
+        },
+        {
+          "questionId": 44,
+          "questionImg": "",
+          "options": ["", "der Müllwerker", "", ""],
+          "correct": "der Müllwerker "
+        },
+        {
+          "questionId": 45,
+          "questionImg": "",
+          "options": ["", "", "", "der Künstler "],
+          "correct": "der Künstler "
+        },
+        {
+          "questionId": 46,
+          "questionImg": "",
+          "options": ["der Lehrer", "", "", ""],
+          "correct": "der Lehrer"
+        },
+        {
+          "questionId": 47,
+          "questionImg": "",
+          "options": ["", "", "der Bäcker", ""],
+          "correct": "der Bäcker"
+        },
+        {
+          "questionId": 48,
+          "questionImg": "",
+          "options": ["der Maurer", "", "", ""],
+          "correct": "der Maurer"
+        },
+        {
+          "questionId": 49,
+          "questionImg": "",
+          "options": ["", "", "", "der Fahrer"],
+          "correct": "der Fahrer"
+        },
+        {
+          "questionId": 50,
+          "questionImg": "",
+          "options": ["", "der Rezeptionist", "", ""],
+          "correct": "der Rezeptionist"
+        }
+      ]
+    },
+
+    {
+      "subcategoryId": 6,
+
+      "subcategoryTitle": "Natur",
+
+      "questions": [
+        {
+          "questionId": 51,
+          "questionImg": "",
+          "options": ["die Insel", "der Strand", "das Blatt", "die Welle"],
+          "correct": "die Welle"
+        },
+        {
+          "questionId": 52,
+          "questionImg": "",
+          "options": ["der Busch", "der See", "das Blatt", "das Meer"],
+          "correct": "das Meer"
+        },
+        {
+          "questionId": 53,
+          "questionImg": "",
+          "options": ["der Wald", "die Höhle", "der See", "das Feld"],
+          "correct": "der Wald"
+        },
+        {
+          "questionId": 54,
+          "questionImg": "",
+          "options": ["die Wüste", "der Berg", "der Zweig", "das Moos"],
+          "correct": "der Berg"
+        },
+        {
+          "questionId": 55,
+          "questionImg": "",
+          "options": ["das Gras", "das Feld", "das Moos", "das Moor"],
+          "correct": "das Moor"
+        },
+        {
+          "questionId": 56,
+          "questionImg": "",
+          "options": ["der Ozean", "der Strand", "der Wasserfall", "der Fluss"],
+          "correct": "der Wasserfall"
+        },
+        {
+          "questionId": 57,
+          "questionImg": "",
+          "options": ["die Höhle", "der Hügel", "der Strand", "der Sand"],
+          "correct": "der Hügel"
+        },
+        {
+          "questionId": 58,
+          "questionImg": "",
+          "options": ["der Busch", "der Hügel", "die Klippe", "der Wind"],
+          "correct": "die Klippe"
+        },
+        {
+          "questionId": 59,
+          "questionImg": "",
+          "options": ["die Blume", "der Baum", "die Rose", "der Fluss"],
+          "correct": "die Blume"
+        },
+        {
+          "questionId": 60,
+          "questionImg": "",
+          "options": ["der Busch", "die Rinde", "der Baum", "der Sand"],
+          "correct": "der Baum"
+        }
+      ]
+    }
+  ]
+}
