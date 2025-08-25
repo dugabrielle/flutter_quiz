@@ -354,62 +354,102 @@
       "questions": [
         {
           "questionId": 41,
-          "questionImg": "",
-          "options": ["", "", "der Bauingenieur", ""],
+          "questionImg": "images/berufe/civil-engineer",
+          "options": [
+            "der Lehrer",
+            "der Friseur",
+            "der Bauingenieur",
+            "der Handwerker"
+          ],
           "correct": "der Bauingenieur"
         },
         {
           "questionId": 42,
-          "questionImg": "",
-          "options": ["der Tierarzt ", "", "", ""],
+          "questionImg": "images/berufe/veterinarian",
+          "options": ["der Tierarzt", "der Arzt", "der Pilot", "der Anwalt"],
           "correct": "der Tierarzt"
         },
         {
           "questionId": 43,
-          "questionImg": "",
-          "options": ["", "", "der Verkäufer", ""],
+          "questionImg": "images/berufe/salesman",
+          "options": ["der Friseur", "der Anwalt", "der Verkäufer", "der Koch"],
           "correct": "der Verkäufer"
         },
         {
           "questionId": 44,
-          "questionImg": "",
-          "options": ["", "der Müllwerker", "", ""],
+          "questionImg": "images/berufe/garbage-collector",
+          "options": [
+            "der Krankenpfleger",
+            "der Müllwerker",
+            "der Bankkaufmann",
+            "der Richter"
+          ],
           "correct": "der Müllwerker "
         },
         {
           "questionId": 45,
-          "questionImg": "",
-          "options": ["", "", "", "der Künstler "],
+          "questionImg": "images/berufe/artist",
+          "options": [
+            "der Handwerker",
+            "der Metzger",
+            "der Ingenieur",
+            "der Künstler "
+          ],
           "correct": "der Künstler "
         },
         {
           "questionId": 46,
-          "questionImg": "",
-          "options": ["der Lehrer", "", "", ""],
+          "questionImg": "images/berufe/teacher",
+          "options": [
+            "der Lehrer",
+            "der Erzieher",
+            "der Metzger",
+            "der Manager"
+          ],
           "correct": "der Lehrer"
         },
         {
           "questionId": 47,
-          "questionImg": "",
-          "options": ["", "", "der Bäcker", ""],
+          "questionImg": "images/berufe/baker",
+          "options": [
+            "der Landwirt",
+            "der Kellner",
+            "der Bäcker",
+            "der Bankkaufmann"
+          ],
           "correct": "der Bäcker"
         },
         {
           "questionId": 48,
-          "questionImg": "",
-          "options": ["der Maurer", "", "", ""],
+          "questionImg": "images/berufe/bricklayer",
+          "options": [
+            "der Maurer",
+            "der Manager",
+            "der Postbote",
+            "der Erzieher"
+          ],
           "correct": "der Maurer"
         },
         {
           "questionId": 49,
-          "questionImg": "",
-          "options": ["", "", "", "der Fahrer"],
+          "questionImg": "images/berufe/driver",
+          "options": [
+            "der Sekretär",
+            "der Richter",
+            "der Landwirt",
+            "der Fahrer"
+          ],
           "correct": "der Fahrer"
         },
         {
           "questionId": 50,
-          "questionImg": "",
-          "options": ["", "der Rezeptionist", "", ""],
+          "questionImg": "images/berufe/receptionist",
+          "options": [
+            "der Assistent",
+            "der Rezeptionist",
+            "der Krankenpfleger",
+            "der Sekretär"
+          ],
           "correct": "der Rezeptionist"
         }
       ]
@@ -423,61 +463,61 @@
       "questions": [
         {
           "questionId": 51,
-          "questionImg": "",
+          "questionImg": "images/natur/wave",
           "options": ["die Insel", "der Strand", "das Blatt", "die Welle"],
           "correct": "die Welle"
         },
         {
           "questionId": 52,
-          "questionImg": "",
+          "questionImg": "images/natur/sea",
           "options": ["der Busch", "der See", "das Blatt", "das Meer"],
           "correct": "das Meer"
         },
         {
           "questionId": 53,
-          "questionImg": "",
+          "questionImg": "images/natur/forest",
           "options": ["der Wald", "die Höhle", "der See", "das Feld"],
           "correct": "der Wald"
         },
         {
           "questionId": 54,
-          "questionImg": "",
+          "questionImg": "images/natur/mountain",
           "options": ["die Wüste", "der Berg", "der Zweig", "das Moos"],
           "correct": "der Berg"
         },
         {
           "questionId": 55,
-          "questionImg": "",
+          "questionImg": "images/natur/swamp",
           "options": ["das Gras", "das Feld", "das Moos", "das Moor"],
           "correct": "das Moor"
         },
         {
           "questionId": 56,
-          "questionImg": "",
+          "questionImg": "images/natur/waterfall",
           "options": ["der Ozean", "der Strand", "der Wasserfall", "der Fluss"],
           "correct": "der Wasserfall"
         },
         {
           "questionId": 57,
-          "questionImg": "",
+          "questionImg": "images/natur/hill",
           "options": ["die Höhle", "der Hügel", "der Strand", "der Sand"],
           "correct": "der Hügel"
         },
         {
           "questionId": 58,
-          "questionImg": "",
+          "questionImg": "images/natur/cliff",
           "options": ["der Busch", "der Hügel", "die Klippe", "der Wind"],
           "correct": "die Klippe"
         },
         {
           "questionId": 59,
-          "questionImg": "",
+          "questionImg": "images/natur/flower",
           "options": ["die Blume", "der Baum", "die Rose", "der Fluss"],
           "correct": "die Blume"
         },
         {
           "questionId": 60,
-          "questionImg": "",
+          "questionImg": "images/natur/tree",
           "options": ["der Busch", "die Rinde", "der Baum", "der Sand"],
           "correct": "der Baum"
         }
