@@ -68,19 +68,34 @@ class _QuizPageState extends State<QuizPage> {
                       mainAxisAlignment: MainAxisAlignment.center,
                       crossAxisAlignment: CrossAxisAlignment.stretch,
                       children: [
-                        Align(
-                          alignment: Alignment.topRight,
-                          child: Text(
-                            'Pergunta 1/10',
-                            textAlign: TextAlign.end,
-                            style: TextStyle(
-                              color: const Color.fromARGB(255, 204, 204, 204),
-                              fontWeight: FontWeight.bold,
-                              fontSize: 12,
+                        Row(
+                          children: [
+                            IconButton(
+                              onPressed: () {
+                                // abrir popup
+                                Navigator.pushReplacementNamed(
+                                  context,
+                                  '/home',
+                                );
+                              },
+                              icon: const Icon(
+                                Icons.close,
+                                color: Color.fromARGB(255, 204, 204, 204),
+                                size: 24,
+                              ),
                             ),
-                          ),
+                            const Spacer(),
+                            const Text(
+                              'Pergunta 1/10',
+                              style: TextStyle(
+                                color: Color.fromARGB(255, 204, 204, 204),
+                                fontWeight: FontWeight.bold,
+                                fontSize: 12,
+                              ),
+                            ),
+                          ],
                         ),
-                        SizedBox(height: 10),
+                        const SizedBox(height: 10),
                         Container(
                           height: 200,
                           decoration: BoxDecoration(
