@@ -15,6 +15,8 @@ class _QuizPageState extends State<QuizPage> {
   bool disabled = false;
   int maxTries = 3;
   int tries = 0;
+  int questionIndex = 0;
+  int totalQuestions = 10;
 
   final List<String> options = [
     'Alternativa A',
@@ -71,12 +73,64 @@ class _QuizPageState extends State<QuizPage> {
                         Row(
                           children: [
                             IconButton(
-                              onPressed: () {
+                              onPressed: () async {
                                 // abrir popup
-                                Navigator.pushReplacementNamed(
-                                  context,
-                                  '/home',
+                                final bool? fecharQuiz = await showDialog(
+                                  context: context,
+                                  builder:
+                                      (contextDialogo) => AlertDialog(
+                                        title: const Text(
+                                          "Sair do quiz?",
+                                          style: TextStyle(
+                                            fontSize: 18,
+                                            fontWeight: FontWeight.w600,
+                                          ),
+                                        ),
+                                        content: const Text(
+                                          "Seu progresso não será salvo.",
+                                          style: TextStyle(fontSize: 15),
+                                        ),
+                                        actions: [
+                                          TextButton(
+                                            onPressed: () {
+                                              Navigator.pop(
+                                                contextDialogo,
+                                                false,
+                                              );
+                                            },
+                                            child: const Text(
+                                              "Cancelar",
+                                              style: TextStyle(
+                                                fontWeight: FontWeight.w600,
+                                              ),
+                                            ),
+                                          ),
+                                          TextButton(
+                                            onPressed: () {
+                                              Navigator.pop(
+                                                contextDialogo,
+                                                true,
+                                              );
+                                            },
+                                            child: const Text(
+                                              "Sair",
+                                              style: TextStyle(
+                                                fontWeight: FontWeight.w600,
+                                              ),
+                                            ),
+                                          ),
+                                        ],
+                                      ),
                                 );
+
+                                if (!context.mounted) return;
+
+                                if (fecharQuiz == true) {
+                                  Navigator.pushReplacementNamed(
+                                    context,
+                                    '/home',
+                                  );
+                                }
                               },
                               icon: const Icon(
                                 Icons.close,
@@ -85,8 +139,8 @@ class _QuizPageState extends State<QuizPage> {
                               ),
                             ),
                             const Spacer(),
-                            const Text(
-                              'Pergunta 1/10',
+                            Text(
+                              "Pergunta ${questionIndex + 1}/$totalQuestions",
                               style: TextStyle(
                                 color: Color.fromARGB(255, 204, 204, 204),
                                 fontWeight: FontWeight.bold,
@@ -127,6 +181,32 @@ class _QuizPageState extends State<QuizPage> {
                               );
                             }),
                           ),
+                        ),
+
+                        Row(
+                          children: [
+                            IconButton(
+                              onPressed: () {
+                                //
+                              },
+                              icon: const Icon(
+                                Icons.arrow_back,
+                                color: Color.fromARGB(255, 204, 204, 204),
+                                size: 24,
+                              ),
+                            ),
+                            const Spacer(),
+                            IconButton(
+                              onPressed: () {
+                                //
+                              },
+                              icon: const Icon(
+                                Icons.arrow_forward,
+                                color: Color.fromARGB(255, 204, 204, 204),
+                                size: 24,
+                              ),
+                            ),
+                          ],
                         ),
                       ],
                     ),
