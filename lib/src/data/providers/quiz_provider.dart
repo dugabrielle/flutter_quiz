@@ -37,4 +37,28 @@ class QuizProvider extends ChangeNotifier {
 
     notifyListeners();
   }
+
+  // próxima questão
+  void nextQuestion() {
+    if (questionIndex < subcategories[subcategoryIndex].questions.length - 1) {
+      questionIndex++;
+      resetQuestion();
+    }
+  }
+
+  // reseta o estado da questão
+  void resetQuestion() {
+    selected = -1;
+    disabled = false;
+    tries = 0;
+    notifyListeners();
+  }
+
+  // carrega os dados do json
+  void loadSubcategories(List<Subcategory> data) {
+    subcategories = data;
+    questionIndex = 0;
+    subcategoryIndex = 0;
+    resetQuestion();
+  }
 }
