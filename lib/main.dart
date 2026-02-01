@@ -3,6 +3,7 @@ import 'package:flutter_quizz/src/ui/pages/boas_vindas.dart';
 import 'package:flutter_quizz/src/ui/pages/home.dart';
 import 'package:flutter_quizz/src/ui/pages/perfil.dart';
 import 'package:flutter_quizz/src/ui/pages/quizpage.dart';
+import 'package:provider/provider.dart';
 
 void main() {
   runApp(const MyApp());
