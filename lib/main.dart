@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_quizz/src/data/providers/quiz_provider.dart';
 import 'package:flutter_quizz/src/ui/pages/boas_vindas.dart';
 import 'package:flutter_quizz/src/ui/pages/home.dart';
 import 'package:flutter_quizz/src/ui/pages/perfil.dart';
