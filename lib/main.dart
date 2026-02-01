@@ -6,7 +6,9 @@ import 'package:flutter_quizz/src/ui/pages/quizpage.dart';
 import 'package:provider/provider.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(
+    ChangeNotifierProvider(create: (_) => QuizProvider(), child: const MyApp()),
+  );
 }
 
 class MyApp extends StatelessWidget {
