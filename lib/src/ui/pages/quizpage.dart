@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_quizz/src/data/providers/quiz_provider.dart';
 import 'package:flutter_quizz/src/data/utils/answer_btn_color.dart';
 import 'package:flutter_quizz/src/data/utils/random_border.dart';
+import 'package:provider/provider.dart';
 
 class QuizPage extends StatefulWidget {
   const QuizPage({super.key});
@@ -10,43 +12,29 @@ class QuizPage extends StatefulWidget {
 }
 
 class _QuizPageState extends State<QuizPage> {
-  int selected = -1;
-  final int correct = 2; // exemplo de resposta correta
-  bool disabled = false;
-  int maxTries = 3;
-  int tries = 0;
-  int questionIndex = 0;
-  int totalQuestions = 10;
+  late Color borderColor;
 
-  final List<String> options = [
-    'Alternativa A',
-    'Alternativa B',
-    'Alternativa C',
-    'Alternativa D',
-  ];
+  @override
+  void initState() {
+    super.initState();
+    BorderColor.value = BorderColor.randomColor;
+    borderColor = BorderColor.value;
+  }
 
   void handleTap(int index, BuildContext context) {
-    if (disabled) return; // impede selecionar novamente após estar desabilitada
-    setState(() {
-      selected = index;
+    final quiz = context.read<QuizProvider>();
+    if (quiz.disabled) return;
 
-      if (index == correct) {
-        disabled = true;
-      } else {
-        tries++;
-        if (tries >= maxTries) {
-          disabled = true;
-        }
-      }
-    });
+    quiz.selectOption(index);
 
-    if (index != correct) {
+    if (index != quiz.correctIndex) {
+      ScaffoldMessenger.of(context).hideCurrentSnackBar();
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(
           content: Text(
-            'Ops, resposta incorreta! Tentativas restantes: ${maxTries - tries}',
+            'Ops, resposta incorreta! Tentativas restantes: ${quiz.maxTries - quiz.tries}',
           ),
-          duration: Duration(seconds: 1),
+          duration: const Duration(seconds: 1),
         ),
       );
     }
@@ -63,152 +51,179 @@ class _QuizPageState extends State<QuizPage> {
               constraints: BoxConstraints(minHeight: constraints.maxHeight),
               child: Center(
                 child: ConstrainedBox(
-                  constraints: BoxConstraints(maxWidth: 400),
+                  constraints: const BoxConstraints(maxWidth: 400),
                   child: Padding(
                     padding: const EdgeInsets.all(16),
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      crossAxisAlignment: CrossAxisAlignment.stretch,
-                      children: [
-                        Row(
-                          children: [
-                            IconButton(
-                              onPressed: () async {
-                                // abrir popup
-                                final bool? fecharQuiz = await showDialog(
-                                  context: context,
-                                  builder:
-                                      (contextDialogo) => AlertDialog(
-                                        title: const Text(
-                                          "Sair do quiz?",
-                                          style: TextStyle(
-                                            fontSize: 18,
-                                            fontWeight: FontWeight.w600,
-                                          ),
-                                        ),
-                                        content: const Text(
-                                          "Seu progresso não será salvo.",
-                                          style: TextStyle(fontSize: 15),
-                                        ),
-                                        actions: [
-                                          TextButton(
-                                            onPressed: () {
-                                              Navigator.pop(
-                                                contextDialogo,
-                                                false,
-                                              );
-                                            },
-                                            child: const Text(
-                                              "Cancelar",
-                                              style: TextStyle(
-                                                fontWeight: FontWeight.w600,
-                                              ),
-                                            ),
-                                          ),
-                                          TextButton(
-                                            onPressed: () {
-                                              Navigator.pop(
-                                                contextDialogo,
-                                                true,
-                                              );
-                                            },
-                                            child: const Text(
-                                              "Sair",
-                                              style: TextStyle(
-                                                fontWeight: FontWeight.w600,
-                                              ),
-                                            ),
-                                          ),
-                                        ],
-                                      ),
-                                );
+                    child: Consumer<QuizProvider>(
+                      builder: (context, quiz, child) {
+                        if (quiz.subcategories.isEmpty) {
+                          return const Center(
+                            child: CircularProgressIndicator(),
+                          );
+                        }
+                        final question = quiz.currentQuestion;
 
-                                if (!context.mounted) return;
-
-                                if (fecharQuiz == true) {
-                                  Navigator.pushReplacementNamed(
-                                    context,
-                                    '/home',
-                                  );
-                                }
-                              },
-                              icon: const Icon(
-                                Icons.close,
-                                color: Color.fromARGB(255, 204, 204, 204),
-                                size: 24,
-                              ),
-                            ),
-                            const Spacer(),
-                            Text(
-                              "Pergunta ${questionIndex + 1}/$totalQuestions",
-                              style: TextStyle(
-                                color: Color.fromARGB(255, 204, 204, 204),
-                                fontWeight: FontWeight.bold,
-                                fontSize: 12,
-                              ),
-                            ),
-                          ],
-                        ),
-                        const SizedBox(height: 10),
-                        Container(
-                          height: 200,
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(8),
-                            border: Border.all(color: BorderColor.value),
-                          ),
-                          child: Center(
+                        if (question == null) {
+                          return const Center(
                             child: Text(
-                              'A imagem vai aqui',
+                              "Fim do Quiz",
                               style: TextStyle(color: Colors.white),
                             ),
-                          ),
-                        ),
-                        SizedBox(height: 16),
-                        Padding(
-                          padding: const EdgeInsets.symmetric(horizontal: 0),
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.stretch,
-                            children: List.generate(options.length, (index) {
-                              return NeonButton(
-                                text: options[index],
-                                onTap: () => handleTap(index, context),
-                                color: answerBtnColor(
-                                  disabled: disabled,
-                                  index: index,
-                                  selected: selected,
-                                  correct: correct,
-                                ),
-                              );
-                            }),
-                          ),
-                        ),
+                          );
+                        }
 
-                        Row(
+                        return Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          crossAxisAlignment: CrossAxisAlignment.stretch,
                           children: [
-                            IconButton(
-                              onPressed: () {
-                                //
-                              },
-                              icon: const Icon(
-                                Icons.arrow_back,
-                                color: Color.fromARGB(255, 204, 204, 204),
-                                size: 24,
+                            Row(
+                              children: [
+                                IconButton(
+                                  onPressed: () async {
+                                    final bool? fecharQuiz = await showDialog(
+                                      context: context,
+                                      builder:
+                                          (contextDialogo) => AlertDialog(
+                                            title: const Text("Sair do quiz?"),
+                                            // content: const Text(
+                                            //   "Seu progresso não será salvo.",
+                                            // ),
+                                            actions: [
+                                              TextButton(
+                                                onPressed:
+                                                    () => Navigator.pop(
+                                                      contextDialogo,
+                                                      false,
+                                                    ),
+                                                child: const Text("Cancelar"),
+                                              ),
+                                              TextButton(
+                                                onPressed:
+                                                    () => Navigator.pop(
+                                                      contextDialogo,
+                                                      true,
+                                                    ),
+                                                child: const Text("Sair"),
+                                              ),
+                                            ],
+                                          ),
+                                    );
+
+                                    if (!context.mounted) return;
+                                    if (fecharQuiz == true) {
+                                      Navigator.pushReplacementNamed(
+                                        context,
+                                        '/home',
+                                      );
+                                    }
+                                  },
+                                  icon: const Icon(
+                                    Icons.close,
+                                    color: Colors.white70,
+                                  ),
+                                ),
+                                const Spacer(),
+                                Text(
+                                  "Pergunta ${quiz.questionIndex + 1}/${quiz.subcategories[quiz.subcategoryIndex].questions.length}",
+                                  style: const TextStyle(
+                                    color: Colors.white70,
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: 12,
+                                  ),
+                                ),
+                              ],
+                            ),
+                            const SizedBox(height: 10),
+                            // Container da Imagem
+                            Container(
+                              height: 200,
+                              width: double.infinity,
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(8),
+                                border: Border.all(color: BorderColor.value),
+                              ),
+                              child: ClipRRect(
+                                borderRadius: BorderRadius.circular(8),
+                                child: Image(
+                                  image: AssetImage(
+                                    'assets/${question.image.replaceAll('assets/', '')}${question.image.contains('.') ? '' : '.png'}',
+                                  ),
+                                  fit: BoxFit.cover,
+                                  errorBuilder: (context, error, stackTrace) {
+                                    return Image(
+                                      image: AssetImage(
+                                        'assets/${question.image.replaceAll('assets/', '')}${question.image.contains('.') ? '' : '.jpg'}',
+                                      ),
+                                      fit: BoxFit.cover,
+                                      errorBuilder:
+                                          (c, e, s) => const Center(
+                                            child: Icon(
+                                              Icons.broken_image,
+                                              color: Colors.white,
+                                              size: 40,
+                                            ),
+                                          ),
+                                    );
+                                  },
+                                ),
                               ),
                             ),
-                            const Spacer(),
-                            IconButton(
-                              onPressed: () {
-                                //
-                              },
-                              icon: const Icon(
-                                Icons.arrow_forward,
-                                color: Color.fromARGB(255, 204, 204, 204),
-                                size: 24,
-                              ),
+                            const SizedBox(height: 16),
+                            // Lista de Opções
+                            Column(
+                              crossAxisAlignment: CrossAxisAlignment.stretch,
+                              children: List.generate(question.options.length, (
+                                index,
+                              ) {
+                                final optionText = question.options[index];
+                                return NeonButton(
+                                  text: optionText,
+                                  onTap: () => handleTap(index, context),
+                                  color: answerBtnColor(
+                                    disabled: quiz.disabled,
+                                    index: index,
+                                    selected: quiz.selected,
+                                    correct: quiz.correctIndex,
+                                  ),
+                                );
+                              }),
+                            ),
+                            const SizedBox(height: 16),
+                            // Botões de Navegação (Back e Next)
+                            Row(
+                              children: [
+                                IconButton(
+                                  onPressed:
+                                      quiz.questionIndex > 0
+                                          ? () => quiz.previousQuestion()
+                                          : null,
+                                  icon: Icon(
+                                    Icons.arrow_back,
+                                    color:
+                                        quiz.questionIndex > 0
+                                            ? Colors.white70
+                                            : Colors.white10,
+                                  ),
+                                ),
+                                const Spacer(),
+                                IconButton(
+                                  onPressed:
+                                      quiz.disabled
+                                          ? () => quiz.nextQuestion()
+                                          : null,
+                                  icon: Icon(
+                                    Icons.arrow_forward,
+                                    color:
+                                        quiz.disabled
+                                            ? Colors.white70
+                                            : Colors.white10,
+                                  ),
+                                ),
+                              ],
                             ),
                           ],
-                        ),
-                      ],
+                        );
+                      },
                     ),
                   ),
                 ),
