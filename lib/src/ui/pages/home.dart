@@ -1,6 +1,8 @@
 import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_quizz/src/data/providers/quiz_provider.dart';
+import 'package:provider/provider.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -18,6 +20,10 @@ class _HomePageState extends State<HomePage> {
   void initState() {
     super.initState();
     readJson();
+
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      context.read<QuizProvider>().loadAllData();
+    });
   }
 
   Future<void> readJson() async {
@@ -163,7 +169,9 @@ class _FadeItemsState extends State<_FadeItems> with TickerProviderStateMixin {
     return GestureDetector(
       onTap: () {
         _controller.reverse().then((_) {
-          Navigator.pushNamed(context, '/quiz', arguments: widget.item);
+          final String categoryTitle = widget.item['title'];
+          context.read<QuizProvider>().setSubcategoryByTitle(categoryTitle);
+          Navigator.pushNamed(context, '/quiz');
         });
       },
       child: FadeTransition(
