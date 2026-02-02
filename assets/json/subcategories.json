@@ -172,13 +172,13 @@
         },
         {
           "questionId": 22,
-          "questionImg": "images/tiere/",
+          "questionImg": "images/tiere/cat",
           "options": ["die Katze", "der Bär", "der Löwe", "die Kuh"],
           "correct": "die Katze"
         },
         {
           "questionId": 23,
-          "questionImg": "images/tiere/",
+          "questionImg": "images/tiere/bee",
           "options": [
             "das Schaf",
             "der Schmetterling",
@@ -207,9 +207,10 @@
         {
           "questionId": 26,
           "questionImg": "images/tiere/whale",
-          "options": ["das Huhn", "der Affe", "der Wal", ""],
+          "options": ["das Huhn", "der Affe", "der Wal", "die Eule"],
           "correct": "der Wal"
         },
+
         {
           "questionId": 27,
           "questionImg": "images/tiere/horse",
@@ -250,7 +251,7 @@
       "questions": [
         {
           "questionId": 31,
-          "questionImg": "images/gefühle/anger",
+          "questionImg": "images/gefuhle/anger",
           "options": [
             "die Langeweile",
             "die Wut",
@@ -261,13 +262,13 @@
         },
         {
           "questionId": 32,
-          "questionImg": "images/gefühle/joy",
+          "questionImg": "images/gefuhle/joy",
           "options": ["die Hoffnung", "die Angst", "die Unruhe", "die Freude"],
           "correct": "die Freude"
         },
         {
           "questionId": 33,
-          "questionImg": "images/gefühle/gratitude",
+          "questionImg": "images/gefuhle/gratitude",
           "options": [
             "die Erleichterung",
             "die Langeweile",
@@ -278,7 +279,7 @@
         },
         {
           "questionId": 34,
-          "questionImg": "images/gefühle/jealousy",
+          "questionImg": "images/gefuhle/jealousy",
           "options": [
             "die Einsamkeit",
             "die Angst",
@@ -289,7 +290,7 @@
         },
         {
           "questionId": 35,
-          "questionImg": "images/gefühle/love",
+          "questionImg": "images/gefuhle/love",
           "options": [
             "die Liebe",
             "der Stolz",
@@ -300,7 +301,7 @@
         },
         {
           "questionId": 36,
-          "questionImg": "images/gefühle/fear",
+          "questionImg": "images/gefuhle/fear",
           "options": [
             "die Verzweiflung",
             "die Angst",
@@ -311,24 +312,24 @@
         },
         {
           "questionId": 37,
-          "questionImg": "",
+          "questionImg": "images/gefuhle/surprise",
           "options": ["der Neid", "die Unruhe", "der Hass", "die Überraschung"],
           "correct": "die Überraschung"
         },
         {
           "questionId": 38,
-          "questionImg": "images/gefühle/embarrassed.jpg",
+          "questionImg": "images/gefuhle/embarrassed",
           "options": [
             "die Sorgen",
             "der Ekel",
             "die Verlegenheit",
             "der Frust"
           ],
-          "correct": "die Verlegenheit "
+          "correct": "die Verlegenheit"
         },
         {
           "questionId": 39,
-          "questionImg": "images/gefühle/sadness",
+          "questionImg": "images/gefuhle/sadness",
           "options": [
             "die Verachtung",
             "die Traurigkeit",
@@ -339,7 +340,7 @@
         },
         {
           "questionId": 40,
-          "questionImg": "images/gefühle/worry",
+          "questionImg": "images/gefuhle/worry",
           "options": ["der Neid", "das Glück", "die Sorgen", "die Schuld"],
           "correct": "die Sorgen"
         }
@@ -384,7 +385,7 @@
             "der Bankkaufmann",
             "der Richter"
           ],
-          "correct": "der Müllwerker "
+          "correct": "der Müllwerker"
         },
         {
           "questionId": 45,
@@ -393,9 +394,9 @@
             "der Handwerker",
             "der Metzger",
             "der Ingenieur",
-            "der Künstler "
+            "der Künstler"
           ],
-          "correct": "der Künstler "
+          "correct": "der Künstler"
         },
         {
           "questionId": 46,
