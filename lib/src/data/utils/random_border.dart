@@ -9,5 +9,8 @@ class BorderColor {
     Color(0xFF00FF9D),
   ];
 
-  static final Color value = _neonColors[Random().nextInt(_neonColors.length)];
+  static Color value = _neonColors[0];
+
+  static Color get randomColor =>
+      _neonColors[Random().nextInt(_neonColors.length)];
 }
