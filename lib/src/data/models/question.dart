@@ -1,10 +1,12 @@
-import 'package:flutter/material.dart';
-
 class Question {
   final int id;
   final String image;
   final List<String> options;
   final String correct;
+
+  int selected = -1;
+  bool disabled = false;
+  int tries = 0;
 
   Question({
     required this.id,
