@@ -21,7 +21,7 @@ class MyApp extends StatelessWidget {
       title: 'Quiz Doit',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(primarySwatch: Colors.blue),
-      initialRoute: '/quiz',
+      initialRoute: '/home',
       routes: {
         '/boasVindas': (context) => const BoasVindas(),
         '/home': (context) => const HomePage(),
